@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 void display(int var, int *ptr);
+void update (int *p); 
 
 int main()
 {
@@ -12,7 +13,7 @@ int main()
 
     display(var, ptr);
 
-    *ptr = 30; // Modificando o valor de var através do ponteiro
+    update(&var);  // Modificando o valor de var através do ponteiro
 
     display(var, ptr);
 
@@ -32,5 +33,11 @@ void display(int var, int *ptr)
     printf("Conteúdo apontado por ptr: %d\n", *ptr);
     printf("Endereço apontado por ptr: %p\n", ptr);
     printf("Endereço de ptr: %p\n", &ptr);
+
+}
+
+void update (int *p)
+{
+    *p = *p+1;
 
 }
